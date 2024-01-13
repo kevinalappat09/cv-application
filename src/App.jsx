@@ -1,5 +1,5 @@
 import './App.css'
-import CV_application from './CV'
+import CV_application from './Components/CV'
 
 function App() {
 

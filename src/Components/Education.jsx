@@ -1,12 +1,13 @@
 import { useState } from "react";
+import "../css/Education.css"
 
 function Education(props) {
     const [education, setEducation] = useState([]);
-    const [educationTitleValue, setEducationTitleValue] = useState("");
-    const [educationInstitutionValue, setEducationInstitutionValue] = useState("");
-    const [educationStartDateValue, setEducationStartDateValue] = useState("");
-    const [educationEndDateValue, setEducationEndDateValue] = useState("");
-    const [educationDescValue, setEducationDescValue] = useState("");
+    const [educationTitleValue, setEducationTitleValue] = useState("Title");
+    const [educationInstitutionValue, setEducationInstitutionValue] = useState("Institution");
+    const [educationStartDateValue, setEducationStartDateValue] = useState("Start");
+    const [educationEndDateValue, setEducationEndDateValue] = useState("End");
+    const [educationDescValue, setEducationDescValue] = useState("Description");
 
 
     const changeTitleValue = (e) => {
@@ -41,11 +42,11 @@ function Education(props) {
 
         setEducation(education => [...education, newEducation]);
 
-        setEducationTitleValue("");
-        setEducationInstitutionValue("");
-        setEducationStartDateValue("");
-        setEducationEndDateValue("");
-        setEducationDescValue("");
+        setEducationTitleValue("Title");
+        setEducationInstitutionValue("Institution");
+        setEducationStartDateValue("Start");
+        setEducationEndDateValue("End");
+        setEducationDescValue("Desc");
     }
 
     const removeEducation = (e) => {
@@ -55,7 +56,8 @@ function Education(props) {
 
     if(props.editable === true) {
         return (    
-            <div className="education">
+            <div className="education" id="editable">
+                <div className="heading">Education : </div>
                 <div className="education-add">
                     <input type="text" name="education-title" className="cv-input" onChange={changeTitleValue} value={educationTitleValue}/>
                     <input type="text" name="education-institution" className="cv-input" onChange={changeInstitutionValue} value={educationInstitutionValue} />
@@ -67,11 +69,18 @@ function Education(props) {
                 <div className="education-content">
                     {education.map((edu) => (
                         <div key={edu.id} className="edu-item">
-                            <div className="edu-title">{edu.title}</div>
-                            <div className="edu-institution">{edu.institution}</div>
-                            <div className="edu-startdate">{edu.startDate}</div>
-                            <div className="edu-enddate">{edu.endDate}</div>
-                            <div className="edu-desc">{edu.desc}</div>
+                            <div className="top">
+                                <div className="main">
+                                    <div className="edu-title">{edu.title}</div>
+                                    <div className="edu-institution">{edu.institution}</div>
+                                </div>
+                                <div className="right">
+                                    <div className="edu-date">{edu.startDate}-{edu.endDate}</div>
+                                </div> 
+                            </div>
+                            <div className=" desc">    
+                                <div className="edu-desc">{edu.desc}</div>
+                            </div>
                             <button data-id={edu.id} className="red-btn" onClick={removeEducation}>Remove this item</button>
                         </div>
                     ))}
@@ -84,11 +93,18 @@ function Education(props) {
                 <div className="education-content">
                     {education.map((edu) => (
                         <div key={edu.id} className="edu-item">
-                            <div className="edu-title">{edu.title}</div>
-                            <div className="edu-institution">{edu.institution}</div>
-                            <div className="edu-startdate">{edu.startDate}</div>
-                            <div className="edu-enddate">{edu.endDate}</div>
-                            <div className="edu-desc">{edu.desc}</div>
+                            <div className="top">
+                                <div className="main">
+                                    <div className="edu-title">{edu.title}</div>
+                                    <div className="edu-institution">{edu.institution}</div>
+                                </div>
+                                <div className="right">
+                                    <div className="edu-date">{edu.startDate}-{edu.endDate}</div>
+                                </div> 
+                            </div>
+                            <div className=" desc">    
+                                <div className="edu-desc">{edu.desc}</div>
+                            </div>
                         </div>
                     ))}
                 </div>

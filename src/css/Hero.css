@@ -1,0 +1,62 @@
+#editable {
+    border: 1px solid #0a0a0a;
+    padding : 32px;
+}
+
+.cv-input-cluster {
+    display : flex;
+    gap: 12px;
+}
+
+.hero {
+    display : flex;
+    flex-direction: column;
+    padding-bottom: 64px;
+    border-bottom: 1px solid #0a0a0a;
+}
+
+.center {
+    text-align: center;
+}
+
+.hero-heading {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.hero-subheading {
+    font-size: 24px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv-input-cluster {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cv-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 1px solid #0a0a0a;
+    padding : 8px;
+
+    transition: 300ms;
+}
+
+.cv-input:focus {
+    outline: none;
+    border-bottom : 1px solid #7dd3fc;
+}
+
+.form {
+    display : flex;
+    flex-direction: column;
+    gap: 16px;
+}

@@ -1,12 +1,13 @@
 import { useState } from "react";
+import "../css/Experience.css"
 
 function Experience(props) {
     const [experience, setExperience] = useState([]);
-    const [experienceTitle, setExperienceTitle] = useState("");
-    const [experienceOrganization, setExperienceOrganization] = useState("");
-    const [experienceStart, setExperienceStart] = useState("");
-    const [experienceEnd, setExperienceEnd] = useState("");
-    const [experienceDesc, setExperienceDesc] = useState("");
+    const [experienceTitle, setExperienceTitle] = useState("Title");
+    const [experienceOrganization, setExperienceOrganization] = useState("Organization");
+    const [experienceStart, setExperienceStart] = useState("Start Date");
+    const [experienceEnd, setExperienceEnd] = useState("End Date");
+    const [experienceDesc, setExperienceDesc] = useState("Description");
 
     const changeTitle = (e) => {
         setExperienceTitle(e.target.value);
@@ -40,11 +41,11 @@ function Experience(props) {
 
         setExperience(experience => [...experience, newExperience]);
 
-        setExperienceTitle("");
-        setExperienceOrganization("");
-        setExperienceStart("");
-        setExperienceEnd("");
-        setExperienceDesc("");
+        setExperienceTitle("Title");
+        setExperienceOrganization("Organization");
+        setExperienceStart("Start");
+        setExperienceEnd("End");
+        setExperienceDesc("Description");
     }
 
     const removeEducation = (e) => {
@@ -54,7 +55,8 @@ function Experience(props) {
 
     if(props.editable === true) {
         return (
-            <div className="experience">
+            <div className="experience" id="edit">
+                <div className="heading">Experience</div>
                 <div className="experience-add">
                     <input type="text" name="exp-title" className="cv-input" onChange={changeTitle} value={experienceTitle} />
                     <input type="text" name="exp-org" className="cv-input" onChange={changeOrganization} value={experienceOrganization} />
@@ -66,12 +68,19 @@ function Experience(props) {
                 <div className="experience-content">
                     {experience.map( (exp) => (
                         <div key={exp.id} className="exp-item">
-                            <div className="exp-title">{exp.title}</div>
-                            <div className="exp-org">{exp.organization}</div>
-                            <div className="exp-start">{exp.start}</div>
-                            <div className="exp-end">{exp.end}</div>
-                            <div className="exp-desc">{exp.desc}</div>
-                            <button data-id={exp.id} className="remove-btn" onClick={removeEducation}>Remove This Item</button>
+                            <div className="top">
+                                <div className="left">
+                                    <div className="exp-title">{exp.title}</div>
+                                    <div className="exp-org">{exp.organization}</div>
+                                </div>
+                                <div className="right">
+                                    {exp.start}-{exp.end}
+                                </div>
+                            </div>
+                            <div className="bottom">
+                                <div className="exp-desc">{exp.desc}</div>
+                            </div>
+                            <button data-id={exp.id} className="red-btn" onClick={removeEducation}>Remove This Item</button>
                         </div>
                     ))}
                 </div>
@@ -83,11 +92,18 @@ function Experience(props) {
                 <div className="experience-content">
                     {experience.map( (exp) => (
                         <div key={exp.id} className="exp-item">
-                            <div className="exp-title">{exp.title}</div>
-                            <div className="exp-org">{exp.organization}</div>
-                            <div className="exp-start">{exp.start}</div>
-                            <div className="exp-end">{exp.end}</div>
-                            <div className="exp-desc">{exp.desc}</div>
+                            <div className="top">
+                                <div className="left">
+                                    <div className="exp-title">{exp.title}</div>
+                                    <div className="exp-org">{exp.organization}</div>
+                                </div>
+                                <div className="right">
+                                    {exp.start}-{exp.end}
+                                </div>
+                            </div>
+                            <div className="bottom">
+                                <div className="exp-desc">{exp.desc}</div>
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -3,6 +3,8 @@ import Hero from "./Hero";
 import Education from "./Education";
 import Experience from "./Experience";
 
+import "../css/CV.css"
+
 function CV_application() {
     const [mode, setMode] = useState("Edit");
 
@@ -20,7 +22,7 @@ function CV_application() {
                 <div className="nav">
                     <div className="heading">CV Application</div>
                     <div className="sub-heading">Edit Mode</div>
-                    <button className="nav-button" onClick={toggleMode}>Switch To Preview</button>
+                    <button className="nav-button" id="btn-edit" onClick={toggleMode}>Switch To Preview</button>
                 </div>
                 <div className="main-content">
                     <Hero  editable={true}/>
@@ -35,7 +37,7 @@ function CV_application() {
                 <div className="nav">
                     <div className="heading">CV Application</div>
                     <div className="sub-heading">Preview Mode</div>
-                    <button className="nav-button" onClick={toggleMode}>Switch To Edit</button>
+                    <button className="nav-button" id="btn-preview" onClick={toggleMode}>Switch To Edit</button>
                 </div>
                 <div className="main-content">
                     <Hero editable={false} />

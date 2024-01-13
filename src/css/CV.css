@@ -1,0 +1,57 @@
+.cv-application {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 32px
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.heading {
+    font-weight: 700;
+    font-size: 64px;
+}
+
+.sub-heading {
+    font-weight: 700;
+    color: #93c5fd;
+    font-size: 32px;
+}
+
+.nav-button {
+    outline: none;
+    border: none;
+    padding: 16px;
+    width: 16rem;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #fafafa;
+    transition: 300ms;
+}
+
+#btn-edit {
+    background-color: #22c55e;
+
+}
+
+#btn-preview {
+    background-color: #fb923c;
+}
+
+.main-content {
+    width : 80%;
+    border : 1px solid #0a0a0a;
+    padding : 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
